@@ -14,8 +14,8 @@ function loadProductsFromStorage() {
                 id: 1,
                 name: "MacBook Pro 14-inch",
                 category: "laptops",
-                price: 1999.99,
-                originalPrice: 2199.99,
+                price: 61999.69,
+                originalPrice: 68199.69,
                 rating: 4.8,
                 reviews: 156,
                 image: "💻",
@@ -26,8 +26,8 @@ function loadProductsFromStorage() {
                 id: 2,
                 name: "Dell XPS 13",
                 category: "laptops",
-                price: 1299.99,
-                originalPrice: 1499.99,
+                price: 40299.69,
+                originalPrice: 46499.69,
                 rating: 4.6,
                 reviews: 89,
                 image: "💻",
@@ -38,8 +38,8 @@ function loadProductsFromStorage() {
                 id: 3,
                 name: "HP Spectre x360",
                 category: "laptops",
-                price: 1399.99,
-                originalPrice: 1599.99,
+                price: 43399.69,
+                originalPrice: 49599.69,
                 rating: 4.5,
                 reviews: 67,
                 image: "💻",
@@ -50,8 +50,8 @@ function loadProductsFromStorage() {
                 id: 4,
                 name: "Lenovo ThinkPad X1",
                 category: "laptops",
-                price: 1899.99,
-                originalPrice: 2099.99,
+                price: 58899.69,
+                originalPrice: 65099.69,
                 rating: 4.7,
                 reviews: 123,
                 image: "💻",
@@ -62,8 +62,8 @@ function loadProductsFromStorage() {
                 id: 5,
                 name: "ASUS ROG Strix",
                 category: "laptops",
-                price: 1599.99,
-                originalPrice: 1799.99,
+                price: 49599.69,
+                originalPrice: 55799.69,
                 rating: 4.4,
                 reviews: 78,
                 image: "💻",
@@ -76,8 +76,8 @@ function loadProductsFromStorage() {
                 id: 6,
                 name: "iPhone 15 Pro",
                 category: "phones",
-                price: 999.99,
-                originalPrice: 1099.99,
+                price: 30999.69,
+                originalPrice: 34099.69,
                 rating: 4.9,
                 reviews: 234,
                 image: "📱",
@@ -88,8 +88,8 @@ function loadProductsFromStorage() {
                 id: 7,
                 name: "Samsung Galaxy S24",
                 category: "phones",
-                price: 899.99,
-                originalPrice: 999.99,
+                price: 27899.69,
+                originalPrice: 30999.69,
                 rating: 4.7,
                 reviews: 189,
                 image: "📱",
@@ -100,8 +100,8 @@ function loadProductsFromStorage() {
                 id: 8,
                 name: "Google Pixel 8",
                 category: "phones",
-                price: 699.99,
-                originalPrice: 799.99,
+                price: 21699.69,
+                originalPrice: 24799.69,
                 rating: 4.6,
                 reviews: 145,
                 image: "📱",
@@ -112,8 +112,8 @@ function loadProductsFromStorage() {
                 id: 9,
                 name: "OnePlus 12",
                 category: "phones",
-                price: 799.99,
-                originalPrice: 899.99,
+                price: 24799.69,
+                originalPrice: 27899.69,
                 rating: 4.5,
                 reviews: 98,
                 image: "📱",
@@ -124,8 +124,8 @@ function loadProductsFromStorage() {
                 id: 10,
                 name: "Xiaomi 14 Ultra",
                 category: "phones",
-                price: 1199.99,
-                originalPrice: 1299.99,
+                price: 37199.69,
+                originalPrice: 40299.69,
                 rating: 4.4,
                 reviews: 76,
                 image: "📱",
@@ -138,8 +138,8 @@ function loadProductsFromStorage() {
                 id: 11,
                 name: "AirPods Pro 2",
                 category: "accessories",
-                price: 249.99,
-                originalPrice: 279.99,
+                price: 7749.69,
+                originalPrice: 8679.69,
                 rating: 4.8,
                 reviews: 312,
                 image: "🎧",
@@ -150,8 +150,8 @@ function loadProductsFromStorage() {
                 id: 12,
                 name: "Samsung Galaxy Buds2",
                 category: "accessories",
-                price: 149.99,
-                originalPrice: 179.99,
+                price: 4649.69,
+                originalPrice: 5579.69,
                 rating: 4.6,
                 reviews: 198,
                 image: "🎧",
@@ -162,8 +162,8 @@ function loadProductsFromStorage() {
                 id: 13,
                 name: "Apple Watch Series 9",
                 category: "accessories",
-                price: 399.99,
-                originalPrice: 449.99,
+                price: 12399.69,
+                originalPrice: 13949.69,
                 rating: 4.7,
                 reviews: 167,
                 image: "⌚",
@@ -174,8 +174,8 @@ function loadProductsFromStorage() {
                 id: 14,
                 name: "Logitech MX Master 3S",
                 category: "accessories",
-                price: 99.99,
-                originalPrice: 119.99,
+                price: 3099.69,
+                originalPrice: 3719.69,
                 rating: 4.5,
                 reviews: 89,
                 image: "🖱️",
@@ -186,8 +186,8 @@ function loadProductsFromStorage() {
                 id: 15,
                 name: "Anker PowerCore 26800",
                 category: "accessories",
-                price: 79.99,
-                originalPrice: 99.99,
+                price: 2479.69,
+                originalPrice: 3099.69,
                 rating: 4.4,
                 reviews: 156,
                 image: "🔋",
@@ -198,8 +198,8 @@ function loadProductsFromStorage() {
                 id: 16,
                 name: "Belkin Wireless Charger",
                 category: "accessories",
-                price: 39.99,
-                originalPrice: 49.99,
+                price: 1239.69,
+                originalPrice: 1549.69,
                 rating: 4.3,
                 reviews: 234,
                 image: "🔌",
@@ -210,8 +210,8 @@ function loadProductsFromStorage() {
                 id: 17,
                 name: "Sony WH-1000XM5",
                 category: "accessories",
-                price: 349.99,
-                originalPrice: 399.99,
+                price: 10849.69,
+                originalPrice: 12399.69,
                 rating: 4.8,
                 reviews: 189,
                 image: "🎧",
@@ -222,8 +222,8 @@ function loadProductsFromStorage() {
                 id: 18,
                 name: "iPad Pro 12.9-inch",
                 category: "accessories",
-                price: 1099.99,
-                originalPrice: 1199.99,
+                price: 34099.69,
+                originalPrice: 37199.69,
                 rating: 4.7,
                 reviews: 145,
                 image: "📱",
@@ -284,6 +284,22 @@ function refreshProductsFromAdmin() {
     loadProducts();
 }
 
+// Function to check for admin updates periodically
+function checkForAdminUpdates() {
+    // Check if products have been updated in localStorage
+    const currentProducts = localStorage.getItem('techhub_products');
+    if (currentProducts) {
+        const newProducts = JSON.parse(currentProducts);
+        // Compare with current products array
+        if (JSON.stringify(newProducts) !== JSON.stringify(products)) {
+            refreshProductsFromAdmin();
+        }
+    }
+}
+
+// Set up periodic checking for admin updates
+setInterval(checkForAdminUpdates, 2000); // Check every 2 seconds
+
 // Event Listeners
 function setupEventListeners() {
     // Cart functionality
@@ -342,7 +358,7 @@ function setupEventListeners() {
     const priceValue = document.getElementById('priceValue');
     if (priceRange && priceValue) {
         priceRange.addEventListener('input', (e) => {
-            priceValue.textContent = `$${e.target.value}`;
+            priceValue.textContent = `EGP ${e.target.value}`;
         });
     }
     
@@ -362,9 +378,23 @@ function loadProducts() {
 function createProductCard(product) {
     const card = document.createElement('div');
     card.className = 'product-card loading';
+    
+    // Handle image display - check if it's a base64 image or URL
+    let imageDisplay;
+    if (product.image && product.image.startsWith('data:image')) {
+        // Base64 image
+        imageDisplay = `<img src="${product.image}" alt="${product.name}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">`;
+    } else if (product.image && product.image !== '💻' && product.image !== '📱' && product.image !== '🎧' && product.image !== '⌚' && product.image !== '🖱️' && product.image !== '🔋' && product.image !== '🔌' && !product.image.startsWith('http')) {
+        // URL or other image format (but not emoji)
+        imageDisplay = `<img src="${product.image}" alt="${product.name}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">`;
+    } else {
+        // Emoji fallback
+        imageDisplay = `<div style="font-size: 4rem; text-align: center; height: 200px; display: flex; align-items: center; justify-content: center;">${product.image}</div>`;
+    }
+    
     card.innerHTML = `
         <div class="product-image">
-            ${product.image}
+            ${imageDisplay}
             ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
         </div>
         <div class="product-info">
@@ -377,9 +407,9 @@ function createProductCard(product) {
                 <span class="rating-text">(${product.reviews})</span>
             </div>
             <div class="product-price">
-                <span class="current-price">$${product.price.toFixed(2)}</span>
+                <span class="current-price">EGP ${product.price.toFixed(2)}</span>
                 ${product.originalPrice > product.price ? 
-                    `<span class="original-price">$${product.originalPrice.toFixed(2)}</span>` : ''}
+                    `<span class="original-price">EGP ${product.originalPrice.toFixed(2)}</span>` : ''}
             </div>
             <div class="product-actions">
                 <button class="add-to-cart" onclick="addToCart(${product.id})">
@@ -463,7 +493,7 @@ function updateCartDisplay() {
     const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     
     cartCount.textContent = totalItems;
-    cartTotal.textContent = `$${totalPrice.toFixed(2)}`;
+    cartTotal.textContent = `EGP ${totalPrice.toFixed(2)}`;
     
     if (cart.length === 0) {
         cartItems.innerHTML = `
@@ -474,22 +504,34 @@ function updateCartDisplay() {
             </div>
         `;
     } else {
-        cartItems.innerHTML = cart.map(item => `
-            <div class="cart-item">
-                <div class="cart-item-image">
-                    ${item.image}
-                </div>
-                <div class="cart-item-details">
-                    <div class="cart-item-title">${item.name}</div>
-                    <div class="cart-item-price">$${item.price.toFixed(2)}</div>
-                    <div class="cart-item-quantity">
-                        <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
-                        <span>${item.quantity}</span>
-                        <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+        cartItems.innerHTML = cart.map(item => {
+            // Handle image display in cart
+            let cartImageDisplay;
+            if (item.image && item.image.startsWith('data:image')) {
+                cartImageDisplay = `<img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">`;
+            } else if (item.image && item.image !== '💻' && item.image !== '📱' && item.image !== '🎧' && item.image !== '⌚' && item.image !== '🖱️' && item.image !== '🔋' && item.image !== '🔌' && !item.image.startsWith('http')) {
+                cartImageDisplay = `<img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">`;
+            } else {
+                cartImageDisplay = `<div style="font-size: 1.5rem; text-align: center; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">${item.image}</div>`;
+            }
+            
+            return `
+                <div class="cart-item">
+                    <div class="cart-item-image">
+                        ${cartImageDisplay}
+                    </div>
+                    <div class="cart-item-details">
+                                            <div class="cart-item-title">${item.name}</div>
+                    <div class="cart-item-price">EGP ${item.price.toFixed(2)}</div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `).join('');
+            `;
+        }).join('');
     }
 }
 
@@ -517,12 +559,12 @@ function loadCheckoutItems() {
     
     checkoutItems.innerHTML = cart.map(item => `
         <div class="order-item">
-            <div class="order-item-name">${item.name} (x${item.quantity})</div>
-            <div class="order-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
+                                    <div class="order-item-name">${item.name} (x${item.quantity})</div>
+                        <div class="order-item-price">EGP ${(item.price * item.quantity).toFixed(2)}</div>
         </div>
     `).join('');
     
-    checkoutTotal.textContent = `$${totalPrice.toFixed(2)}`;
+    checkoutTotal.textContent = `EGP ${totalPrice.toFixed(2)}`;
 }
 
 function handleCheckout(e) {
@@ -614,9 +656,9 @@ function sendEmailToCustomer(orderData) {
         'Order ID': orderData.orderId,
         'Customer Name': orderData.customer.name,
         'Order Date': orderData.orderDate,
-        'Total Amount': `$${orderData.total.toFixed(2)}`,
+        'Total Amount': `EGP ${orderData.total.toFixed(2)}`,
         'Order Items': orderData.items.map(item =>
-            `${item.name} (${item.category}) - Qty: ${item.quantity} - Price: $${item.price.toFixed(2)} - Total: $${(item.price * item.quantity).toFixed(2)}`
+            `${item.name} (${item.category}) - Qty: ${item.quantity} - Price: EGP ${item.price.toFixed(2)} - Total: EGP ${(item.price * item.quantity).toFixed(2)}`
         ).join('\n'),
         'Delivery Address': orderData.customer.address,
         'Contact Phone': orderData.customer.phone,
@@ -781,10 +823,20 @@ function openQuickView(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
     
+    // Handle image display in quick view
+    let quickViewImageDisplay;
+    if (product.image && product.image.startsWith('data:image')) {
+        quickViewImageDisplay = `<img src="${product.image}" alt="${product.name}" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px;">`;
+    } else if (product.image && product.image !== '💻' && product.image !== '📱' && product.image !== '🎧' && product.image !== '⌚' && product.image !== '🖱️' && product.image !== '🔋' && product.image !== '🔌' && !product.image.startsWith('http')) {
+        quickViewImageDisplay = `<img src="${product.image}" alt="${product.name}" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px;">`;
+    } else {
+        quickViewImageDisplay = `<div style="height: 300px; font-size: 5rem; display: flex; align-items: center; justify-content: center;">${product.image}</div>`;
+    }
+    
     modalBody.innerHTML = `
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
-            <div class="product-image" style="height: 300px; font-size: 5rem;">
-                ${product.image}
+            <div class="product-image">
+                ${quickViewImageDisplay}
             </div>
             <div>
                 <div class="product-category">${product.category}</div>
@@ -796,9 +848,9 @@ function openQuickView(productId) {
                     <span class="rating-text">(${product.reviews} reviews)</span>
                 </div>
                 <div class="product-price" style="margin-bottom: 1.5rem;">
-                    <span class="current-price">$${product.price.toFixed(2)}</span>
-                    ${product.originalPrice > product.price ? 
-                        `<span class="original-price">$${product.originalPrice.toFixed(2)}</span>` : ''}
+                                    <span class="current-price">EGP ${product.price.toFixed(2)}</span>
+                ${product.originalPrice > product.price ? 
+                    `<span class="original-price">EGP ${product.originalPrice.toFixed(2)}</span>` : ''}
                 </div>
                 <p style="color: #64748b; line-height: 1.6; margin-bottom: 2rem;">
                     ${product.description}

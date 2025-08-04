@@ -527,6 +527,149 @@
             font-size: 0.9rem;
         }
 
+        /* Image Upload Styles */
+        .image-upload-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .image-preview {
+            width: 100%;
+            height: 200px;
+            border: 2px dashed #e2e8f0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f7fafc;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-preview:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .image-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .upload-placeholder {
+            text-align: center;
+            color: #718096;
+        }
+
+        .upload-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #cbd5e0;
+        }
+
+        .upload-placeholder p {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .upload-placeholder span {
+            font-size: 0.9rem;
+            color: #a0aec0;
+        }
+
+        .image-upload-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* Image Type Selector Styles */
+        .image-type-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .image-type-tabs {
+            display: flex;
+            gap: 10px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .image-type-tab {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            background: #f7fafc;
+            color: #64748b;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .image-type-tab.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .image-type-tab:hover:not(.active) {
+            background: #e2e8f0;
+            color: #374151;
+        }
+
+        .image-input-section {
+            min-height: 200px;
+        }
+
+        .emoji-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .emoji-suggestion {
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            background: #f7fafc;
+            border: 2px solid transparent;
+        }
+
+        .emoji-suggestion:hover {
+            background: #e2e8f0;
+            border-color: #667eea;
+            transform: scale(1.1);
+        }
+
+        #productEmoji {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1.5rem;
+            text-align: center;
+            transition: border-color 0.3s ease;
+        }
+
+        #productEmoji:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
         @media (max-width: 768px) {
             .admin-container {
                 padding: 15px;
@@ -648,7 +791,7 @@
                 </div>
                 <div class="stat-card">
                     <i class="fas fa-dollar-sign"></i>
-                    <h3 id="totalRevenue">$0</h3>
+                    <h3 id="totalRevenue">EGP 0</h3>
                     <p>Total Revenue</p>
                 </div>
                 <div class="stat-card">
@@ -665,7 +808,8 @@
                         <i class="fas fa-list"></i>
                         All Orders
                     </h2>
-                    
+                    <div class="controls">
+                        <input type="text" class="search-box" id="searchOrders" placeholder="Search orders...">
                         <button class="btn btn-danger" onclick="clearAllOrders()">
                             <i class="fas fa-trash"></i>
                             Clear All
@@ -722,8 +866,60 @@
                             <input type="number" id="productReviews" name="productReviews" min="0" value="100">
                         </div>
                         <div class="form-group">
-                            <label for="productImage">Product Image (Emoji)</label>
-                            <input type="text" id="productImage" name="productImage" placeholder="💻" value="💻">
+                            <label for="productImage">Product Image</label>
+                            <div class="image-type-selector">
+                                <div class="image-type-tabs">
+                                    <button type="button" class="image-type-tab active" onclick="switchImageType('emoji')">
+                                        <i class="fas fa-smile"></i>
+                                        Emoji
+                                    </button>
+                                    <button type="button" class="image-type-tab" onclick="switchImageType('image')">
+                                        <i class="fas fa-image"></i>
+                                        Upload Image
+                                    </button>
+                                </div>
+                                
+                                <!-- Emoji Input -->
+                                <div class="image-input-section" id="emojiSection">
+                                    <input type="text" id="productEmoji" name="productEmoji" placeholder="💻" value="💻" maxlength="10">
+                                    <div class="emoji-suggestions">
+                                        <span class="emoji-suggestion" onclick="setEmoji('💻')">💻</span>
+                                        <span class="emoji-suggestion" onclick="setEmoji('📱')">📱</span>
+                                        <span class="emoji-suggestion" onclick="setEmoji('🎧')">🎧</span>
+                                        <span class="emoji-suggestion" onclick="setEmoji('⌚')">⌚</span>
+                                        <span class="emoji-suggestion" onclick="setEmoji('🖱️')">🖱️</span>
+                                        <span class="emoji-suggestion" onclick="setEmoji('🔋')">🔋</span>
+                                        <span class="emoji-suggestion" onclick="setEmoji('🔌')">🔌</span>
+                                        <span class="emoji-suggestion" onclick="setEmoji('📷')">📷</span>
+                                        <span class="emoji-suggestion" onclick="setEmoji('🎮')">🎮</span>
+                                        <span class="emoji-suggestion" onclick="setEmoji('💡')">💡</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Image Upload -->
+                                <div class="image-input-section" id="imageSection" style="display: none;">
+                                    <div class="image-upload-container">
+                                        <input type="file" id="productImageFile" name="productImageFile" accept="image/*" style="display: none;">
+                                        <div class="image-preview" id="imagePreview">
+                                            <div class="upload-placeholder">
+                                                <i class="fas fa-cloud-upload-alt"></i>
+                                                <p>Click to upload image</p>
+                                                <span>or drag and drop</span>
+                                            </div>
+                                        </div>
+                                        <div class="image-upload-buttons">
+                                            <button type="button" class="btn btn-secondary btn-small" onclick="document.getElementById('productImageFile').click()">
+                                                <i class="fas fa-upload"></i>
+                                                Choose Image
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-small" onclick="clearImage()" id="clearImageBtn" style="display: none;">
+                                                <i class="fas fa-trash"></i>
+                                                Remove
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="productBadge">Badge</label>
@@ -758,10 +954,6 @@
                     </h2>
                     <div class="controls">
                         <input type="text" class="search-box" id="searchProducts" placeholder="Search products...">
-                        <button class="btn btn-primary" onclick="exportProducts()">
-                            <i class="fas fa-download"></i>
-                            Export Products
-                        </button>
                     </div>
                 </div>
 
@@ -841,7 +1033,7 @@
 
             document.getElementById('totalOrders').textContent = totalOrders;
             document.getElementById('pendingOrders').textContent = pendingOrders;
-            document.getElementById('totalRevenue').textContent = `$${totalRevenue.toFixed(2)}`;
+            document.getElementById('totalRevenue').textContent = `EGP ${totalRevenue.toFixed(2)}`;
             document.getElementById('uniqueCustomers').textContent = uniqueCustomers;
         }
 
@@ -927,7 +1119,7 @@
                                     <div class="item-category">${item.category}</div>
                                 </div>
                                 <div class="item-price">
-                                    Qty: ${item.quantity} × $${item.price.toFixed(2)} = $${(item.price * item.quantity).toFixed(2)}
+                                    Qty: ${item.quantity} × EGP ${item.price.toFixed(2)} = EGP ${(item.price * item.quantity).toFixed(2)}
                                 </div>
                             </div>
                         `).join('')}
@@ -935,7 +1127,7 @@
 
                     <div class="total">
                         <h4>Total Amount</h4>
-                        <div class="amount">$${order.total.toFixed(2)}</div>
+                        <div class="amount">EGP ${order.total.toFixed(2)}</div>
                     </div>
 
                     <div class="actions">
@@ -958,13 +1150,19 @@
 
         // Create product card HTML
         function createProductCard(product) {
+            const imageDisplay = product.image && product.image.startsWith('data:image') 
+                ? `<img src="${product.image}" alt="${product.name}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">`
+                : product.image && product.image !== '💻'
+                ? `<img src="${product.image}" alt="${product.name}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">`
+                : `<div style="font-size: 3rem; text-align: center; margin-bottom: 15px;">${product.image || '💻'}</div>`;
+
             return `
                 <div class="product-card" data-product-id="${product.id}">
-                    <div class="product-image">${product.image}</div>
+                    <div class="product-image">${imageDisplay}</div>
                     <div class="product-info">
                         <h3>${product.name}</h3>
                         <div class="product-category">${product.category}</div>
-                        <div class="product-price">$${product.price.toFixed(2)}</div>
+                        <div class="product-price">EGP ${product.price.toFixed(2)}</div>
                         <div class="product-rating">
                             <span>${generateStars(product.rating)}</span>
                             <span>(${product.reviews})</span>
@@ -1033,9 +1231,27 @@
             document.getElementById('productOriginalPrice').value = product.originalPrice;
             document.getElementById('productRating').value = product.rating;
             document.getElementById('productReviews').value = product.reviews;
-            document.getElementById('productImage').value = product.image;
             document.getElementById('productBadge').value = product.badge || '';
             document.getElementById('productDescription').value = product.description;
+
+            // Handle image display
+            const imagePreview = document.getElementById('imagePreview');
+            if (product.image && product.image.startsWith('data:image')) {
+                // If it's a base64 image - switch to image tab
+                switchImageType('image');
+                imagePreview.innerHTML = `<img src="${product.image}" alt="Product Image">`;
+                document.getElementById('clearImageBtn').style.display = 'inline-flex';
+            } else if (product.image && product.image !== '💻' && product.image !== '📱' && product.image !== '🎧' && product.image !== '⌚' && product.image !== '🖱️' && product.image !== '🔋' && product.image !== '🔌') {
+                // If it's a URL or other image format - switch to image tab
+                switchImageType('image');
+                imagePreview.innerHTML = `<img src="${product.image}" alt="Product Image">`;
+                document.getElementById('clearImageBtn').style.display = 'inline-flex';
+            } else {
+                // If it's an emoji - switch to emoji tab
+                switchImageType('emoji');
+                document.getElementById('productEmoji').value = product.image || '💻';
+                clearImage();
+            }
 
             // Change button text
             const submitBtn = document.querySelector('#productForm button[type="submit"]');
@@ -1071,6 +1287,10 @@
         function resetProductForm() {
             document.getElementById('productForm').reset();
             editingProductId = null;
+            clearImage();
+            
+            // Reset to emoji tab by default
+            switchImageType('emoji');
             
             const submitBtn = document.querySelector('#productForm button[type="submit"]');
             submitBtn.innerHTML = '<i class="fas fa-plus"></i> Add Product';
@@ -1108,30 +1328,9 @@
             }
         }
 
-        // Export Functions
-        function exportOrders() {
-            const dataStr = JSON.stringify(orders, null, 2);
-            const dataBlob = new Blob([dataStr], {type: 'application/json'});
-            const url = URL.createObjectURL(dataBlob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = `techhub_orders_${new Date().toISOString().split('T')[0]}.json`;
-            link.click();
-            URL.revokeObjectURL(url);
-            showNotification('Orders exported successfully', 'success');
-        }
 
-        function exportProducts() {
-            const dataStr = JSON.stringify(products, null, 2);
-            const dataBlob = new Blob([dataStr], {type: 'application/json'});
-            const url = URL.createObjectURL(dataBlob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = `techhub_products_${new Date().toISOString().split('T')[0]}.json`;
-            link.click();
-            URL.revokeObjectURL(url);
-            showNotification('Products exported successfully', 'success');
-        }
+
+
 
         // Search Functions
         function searchOrders(query) {
@@ -1185,6 +1384,38 @@
                 searchProducts(e.target.value);
             });
 
+            // Image upload functionality
+            const imageFileInput = document.getElementById('productImageFile');
+            const imagePreview = document.getElementById('imagePreview');
+            
+            imageFileInput.addEventListener('change', handleImageUpload);
+            imagePreview.addEventListener('click', () => imageFileInput.click());
+            
+            // Drag and drop functionality
+            imagePreview.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                imagePreview.style.borderColor = '#667eea';
+                imagePreview.style.background = '#f0f4ff';
+            });
+            
+            imagePreview.addEventListener('dragleave', (e) => {
+                e.preventDefault();
+                imagePreview.style.borderColor = '#e2e8f0';
+                imagePreview.style.background = '#f7fafc';
+            });
+            
+            imagePreview.addEventListener('drop', (e) => {
+                e.preventDefault();
+                imagePreview.style.borderColor = '#e2e8f0';
+                imagePreview.style.background = '#f7fafc';
+                
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    imageFileInput.files = files;
+                    handleImageUpload();
+                }
+            });
+
             // Product form
             const productForm = document.getElementById('productForm');
             productForm.addEventListener('submit', (e) => {
@@ -1198,7 +1429,7 @@
                     originalPrice: parseFloat(formData.get('productOriginalPrice')) || parseFloat(formData.get('productPrice')),
                     rating: parseFloat(formData.get('productRating')),
                     reviews: parseInt(formData.get('productReviews')),
-                    image: formData.get('productImage'),
+                    image: getCurrentImageData(),
                     badge: formData.get('productBadge'),
                     description: formData.get('productDescription')
                 };
@@ -1209,8 +1440,85 @@
                 } else {
                     addProduct(productData);
                     productForm.reset();
+                    clearImage();
                 }
             });
+        }
+
+        // Image handling functions
+        function handleImageUpload() {
+            const file = document.getElementById('productImageFile').files[0];
+            if (!file) return;
+
+            if (!file.type.startsWith('image/')) {
+                showNotification('Please select a valid image file', 'error');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imagePreview = document.getElementById('imagePreview');
+                imagePreview.innerHTML = `<img src="${e.target.result}" alt="Product Image">`;
+                document.getElementById('clearImageBtn').style.display = 'inline-flex';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function clearImage() {
+            document.getElementById('productImageFile').value = '';
+            document.getElementById('imagePreview').innerHTML = `
+                <div class="upload-placeholder">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Click to upload image</p>
+                    <span>or drag and drop</span>
+                </div>
+            `;
+            document.getElementById('clearImageBtn').style.display = 'none';
+        }
+
+        function getCurrentImageData() {
+            const activeTab = document.querySelector('.image-type-tab.active');
+            const activeTabText = activeTab.textContent.trim();
+            
+            if (activeTabText === 'Emoji') {
+                // Return emoji value
+                return document.getElementById('productEmoji').value || '💻';
+            } else {
+                // Return image data
+                const imagePreview = document.getElementById('imagePreview');
+                const img = imagePreview.querySelector('img');
+                return img ? img.src : '💻'; // Fallback to emoji if no image
+            }
+        }
+
+        // Image type switching
+        function switchImageType(type) {
+            // Update tab states
+            document.querySelectorAll('.image-type-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Find and activate the correct tab
+            const tabs = document.querySelectorAll('.image-type-tab');
+            if (type === 'emoji') {
+                tabs[0].classList.add('active');
+            } else {
+                tabs[1].classList.add('active');
+            }
+            
+            // Show/hide sections
+            if (type === 'emoji') {
+                document.getElementById('emojiSection').style.display = 'block';
+                document.getElementById('imageSection').style.display = 'none';
+            } else {
+                document.getElementById('emojiSection').style.display = 'none';
+                document.getElementById('imageSection').style.display = 'block';
+            }
+        }
+
+        // Emoji selection
+        function setEmoji(emoji) {
+            document.getElementById('productEmoji').value = emoji;
         }
 
         // Function to add new order (called from main website)
@@ -1227,7 +1535,4 @@
         window.addNewOrder = addNewOrder;
     </script>
 </body>
-
 </html> 
-
-
