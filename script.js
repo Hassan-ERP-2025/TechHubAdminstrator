@@ -2,235 +2,38 @@
 let products = [];
 
 // Load products from localStorage or use default products
+// الدالة الجديدة المربوطة بالسيرفر السحابي
 function loadProductsFromStorage() {
+    // 1. أولاً بنجيب المنتجات الكاش لو موجودة عشان الموقع يفتح بسرعة
     const savedProducts = localStorage.getItem('techhub_products');
     if (savedProducts) {
         products = JSON.parse(savedProducts);
-    } else {
-        // Default products if none exist in storage
-        products = [
-            // Laptops
-            {
-                id: 1,
-                name: "MacBook Pro 14-inch",
-                category: "laptops",
-                price: 61999.69,
-                originalPrice: 68199.69,
-                rating: 4.8,
-                reviews: 156,
-                image: "💻",
-                badge: "Best Seller",
-                description: "Powerful 14-inch MacBook Pro with M2 Pro chip, 16GB RAM, and 512GB SSD."
-            },
-            {
-                id: 2,
-                name: "Dell XPS 13",
-                category: "laptops",
-                price: 40299.69,
-                originalPrice: 46499.69,
-                rating: 4.6,
-                reviews: 89,
-                image: "💻",
-                badge: "Sale",
-                description: "Ultra-thin 13-inch laptop with Intel i7 processor and 16GB RAM."
-            },
-            {
-                id: 3,
-                name: "HP Spectre x360",
-                category: "laptops",
-                price: 43399.69,
-                originalPrice: 49599.69,
-                rating: 4.5,
-                reviews: 67,
-                image: "💻",
-                badge: "2-in-1",
-                description: "Convertible laptop with 360-degree hinge and touch display."
-            },
-            {
-                id: 4,
-                name: "Lenovo ThinkPad X1",
-                category: "laptops",
-                price: 58899.69,
-                originalPrice: 65099.69,
-                rating: 4.7,
-                reviews: 123,
-                image: "💻",
-                badge: "Premium",
-                description: "Business-class laptop with exceptional build quality and performance."
-            },
-            {
-                id: 5,
-                name: "ASUS ROG Strix",
-                category: "laptops",
-                price: 49599.69,
-                originalPrice: 55799.69,
-                rating: 4.4,
-                reviews: 78,
-                image: "💻",
-                badge: "Gaming",
-                description: "Gaming laptop with RTX 4060 graphics and 144Hz display."
-            },
-            
-            // Phones
-            {
-                id: 6,
-                name: "iPhone 15 Pro",
-                category: "phones",
-                price: 30999.69,
-                originalPrice: 34099.69,
-                rating: 4.9,
-                reviews: 234,
-                image: "📱",
-                badge: "New",
-                description: "Latest iPhone with A17 Pro chip, titanium design, and pro camera system."
-            },
-            {
-                id: 7,
-                name: "Samsung Galaxy S24",
-                category: "phones",
-                price: 27899.69,
-                originalPrice: 30999.69,
-                rating: 4.7,
-                reviews: 189,
-                image: "📱",
-                badge: "AI Powered",
-                description: "Android flagship with AI features and exceptional camera capabilities."
-            },
-            {
-                id: 8,
-                name: "Google Pixel 8",
-                category: "phones",
-                price: 21699.69,
-                originalPrice: 24799.69,
-                rating: 4.6,
-                reviews: 145,
-                image: "📱",
-                badge: "Best Camera",
-                description: "Pure Android experience with industry-leading camera technology."
-            },
-            {
-                id: 9,
-                name: "OnePlus 12",
-                category: "phones",
-                price: 24799.69,
-                originalPrice: 27899.69,
-                rating: 4.5,
-                reviews: 98,
-                image: "📱",
-                badge: "Fast Charging",
-                description: "Flagship killer with 100W charging and Hasselblad cameras."
-            },
-            {
-                id: 10,
-                name: "Xiaomi 14 Ultra",
-                category: "phones",
-                price: 37199.69,
-                originalPrice: 40299.69,
-                rating: 4.4,
-                reviews: 76,
-                image: "📱",
-                badge: "Pro Camera",
-                description: "Professional photography phone with Leica optics."
-            },
-            
-            // Accessories
-            {
-                id: 11,
-                name: "AirPods Pro 2",
-                category: "accessories",
-                price: 7749.69,
-                originalPrice: 8679.69,
-                rating: 4.8,
-                reviews: 312,
-                image: "🎧",
-                badge: "Wireless",
-                description: "Active noise cancellation with spatial audio and wireless charging."
-            },
-            {
-                id: 12,
-                name: "Samsung Galaxy Buds2",
-                category: "accessories",
-                price: 4649.69,
-                originalPrice: 5579.69,
-                rating: 4.6,
-                reviews: 198,
-                image: "🎧",
-                badge: "Android",
-                description: "Premium wireless earbuds with active noise cancellation."
-            },
-            {
-                id: 13,
-                name: "Apple Watch Series 9",
-                category: "accessories",
-                price: 12399.69,
-                originalPrice: 13949.69,
-                rating: 4.7,
-                reviews: 167,
-                image: "⌚",
-                badge: "Health",
-                description: "Advanced health monitoring with ECG and blood oxygen tracking."
-            },
-            {
-                id: 14,
-                name: "Logitech MX Master 3S",
-                category: "accessories",
-                price: 3099.69,
-                originalPrice: 3719.69,
-                rating: 4.5,
-                reviews: 89,
-                image: "🖱️",
-                badge: "Wireless",
-                description: "Premium wireless mouse with silent clicks and precision scrolling."
-            },
-            {
-                id: 15,
-                name: "Anker PowerCore 26800",
-                category: "accessories",
-                price: 2479.69,
-                originalPrice: 3099.69,
-                rating: 4.4,
-                reviews: 156,
-                image: "🔋",
-                badge: "High Capacity",
-                description: "26,800mAh portable charger with fast charging technology."
-            },
-            {
-                id: 16,
-                name: "Belkin Wireless Charger",
-                category: "accessories",
-                price: 1239.69,
-                originalPrice: 1549.69,
-                rating: 4.3,
-                reviews: 234,
-                image: "🔌",
-                badge: "Fast Charge",
-                description: "15W wireless charging pad compatible with all Qi devices."
-            },
-            {
-                id: 17,
-                name: "Sony WH-1000XM5",
-                category: "accessories",
-                price: 10849.69,
-                originalPrice: 12399.69,
-                rating: 4.8,
-                reviews: 189,
-                image: "🎧",
-                badge: "Noise Cancel",
-                description: "Industry-leading noise cancellation with 30-hour battery life."
-            },
-            {
-                id: 18,
-                name: "iPad Pro 12.9-inch",
-                category: "accessories",
-                price: 34099.69,
-                originalPrice: 37199.69,
-                rating: 4.7,
-                reviews: 145,
-                image: "📱",
-                badge: "Pro",
-                description: "12.9-inch iPad Pro with M2 chip and Liquid Retina XDR display."
+        if (typeof displayProducts === 'function') displayProducts(products);
+    }
+
+    // 2. فوراً بنروح نجيب المنتجات السحابية من سيرفر Render عشان لو الأدمن ضاف حاجة جديدة تظهر
+    fetch('https://techhubtest.onrender.com/api/products')
+        .then(response => response.json())
+        .then(cloudProducts => {
+            if (cloudProducts && cloudProducts.length > 0) {
+                products = cloudProducts;
+                localStorage.setItem('techhub_products', JSON.stringify(cloudProducts));
+                // لو دالة العرض عندك اسمها displayProducts بتناديها هنا عشان تحدث الشاشة
+                if (typeof displayProducts === 'function') displayProducts(products);
             }
-        ];
+        })
+        .catch(error => {
+            console.log("برجاء التأكد من تشغيل سيرفر Render أو استخدام الداتا المحلية:", error);
+            // لو السيرفر نايم أو فيه مشكلة بيشغل المنتجات الافتراضية كخطة بديلة
+            if (!savedProducts) {
+                products = [
+                    { id: 1, name: "MacBook Pro 14-inch", category: "laptops", price: 61999.69, image: "💻" },
+                    { id: 2, name: "Dell XPS 13", category: "laptops", price: 40299.69, image: "💻" }
+                ];
+                if (typeof displayProducts === 'function') displayProducts(products);
+            }
+        });
+}
         // Save default products to localStorage
         localStorage.setItem('techhub_products', JSON.stringify(products));
     }
